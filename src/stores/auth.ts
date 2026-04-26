@@ -3,12 +3,13 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
-export type UserRole = "patient" | "doctor" | "admin";
+export type UserRole = "patient" | "doctor" | "admin" | "clinic_admin" | "clinic_staff";
 
 export interface AuthUser {
   id: string;
   name: string;
   role: UserRole;
+  clinicId?: string | null;
 }
 
 interface AuthState {
